@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple HTML Page</title>
+  <title>Live Text Update</title>
 </head>
 <body>
-  <h1>Welcome to My Webpage</h1>
-  <p>This is a simple webpage created using only HTML. The title above is large, and this body text is smaller by default.</p>
+  <h1>Live Text Preview</h1>
+  
+  <label for="inputBox">Type something:</label><br>
+  <input type="text" id="inputBox" oninput="updateText()"><br><br>
+  
+  <h2>Preview:</h2>
+  <p id="outputText">Your text will appear here...</p>
+
+  <script>
+    function updateText() {
+      const input = document.getElementById('inputBox').value;
+      document.getElementById('outputText').textContent = input;
+    }
+  </script>
 </body>
 </html>
